@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPWeb</title>
+</head>
+<body>
+
+    <h1>Hello, DIPWeb!</h1>
+
+    <button onclick="getMessage()">连接后端</button>
+
+    <p id="result">等待连接...</p>
+
+    <script>
+        async function getMessage() {
+
+            const response = await fetch("/api/hello");
+
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                data.message;
+        }
+    </script>
+
+</body>
+</html>
