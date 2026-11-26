@@ -30,6 +30,12 @@ def hello():
         "status": "success"
     }
 
+# 测试 API
+@app.get("/api/gray")
+def gray():
+    grayFileResponse = FileResponse(FRONTEND_DIR / "gray.html")
+    return grayFileResponse
+
 # 返回网页
 @app.get("/")
 def index():

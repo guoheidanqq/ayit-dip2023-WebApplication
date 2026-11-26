@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPWeb</title>
+</head>
+<body>
+
+    <h1>Hello, DIPWeb!</h1>
+    <p id="result">color 2 gray</p>    
+    <canvas id="myCanvas"
+    width="512"
+    height="512"
+    style="border: 2px solid red; background: lightgray;">
+    </canvas>
+    
+    <script>
+
+        async function getMessage() {
+
+            const response = await fetch("/api/gray");
+
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                data.message;
+        }
+    </script>
+
+</body>
+</html>
