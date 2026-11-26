@@ -10,11 +10,47 @@
 
     <h1>Hello, DIPWeb!</h1>
     <p id="result">color 2 gray</p>    
-    <canvas id="myCanvas"
-    width="512"
-    height="512"
-    style="border: 2px solid red; background: lightgray;">
-    </canvas>
+    <div style="display: flex; gap: 20px;">
+
+        <!-- 原始图像 -->
+        <div>
+            <h3>Original Image</h3>
+            <canvas id="originalCanvas"
+                width="512"
+                height="512"
+                style="border: 2px solid red;">
+            </canvas>
+            <br>
+            <input
+            type="file"
+            id="uploadImage"
+            accept="image/*">
+            <br>
+            <button id="uploadButton" style="margin-top: 8px;">
+                Upload
+            </button>
+            
+        </div>
+        
+
+    
+        <!-- 处理后的图像 -->
+        <div>
+            <h3>Processed Image</h3>
+            <canvas id="processedCanvas"
+                width="512"
+                height="512"
+                style="border: 2px solid blue;">
+            </canvas>
+            <br>
+            <button
+            id="color2gray"
+            style="margin-top: 8px;">
+            Color2Gray
+        </button>
+        </div>
+    
+    </div>
     
     <script>
 
